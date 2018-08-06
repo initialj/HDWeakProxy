@@ -1,0 +1,2 @@
+# HDWeakProxy
+利用NSProxy实现对Controller的弱引用。比如用来解决NSTimer对target的强引用导致的内存泄露问题。
