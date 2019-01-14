@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HDWeakProxy"
-  s.version      = "1.0.0"
+  s.version      = "1.1.0"
   s.summary      = "利用NSProxy实现对Controller的弱引用。比如用来解决NSTimer对target的强引用导致的内存泄露问题。"
 
   # This description is used to generate tags and improve search results.
