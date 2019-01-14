@@ -15,6 +15,7 @@
 
 @interface HDWeakProxy : NSProxy
 
+- (instancetype)initWithTarget:(id)target;
 
 + (instancetype)weakProxyForObject:(id)target;
 
