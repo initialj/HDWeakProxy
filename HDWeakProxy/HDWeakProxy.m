@@ -31,7 +31,7 @@
 #pragma mark - Forwarding Messages
 
 - (BOOL)respondsToSelector:(SEL)aSelector{
-    return [self.target respondsToSelector:aSelector];
+    return [_target respondsToSelector:aSelector];
 }
 
 
@@ -49,13 +49,8 @@
  */
 - (void)forwardInvocation:(NSInvocation *)invocation
 {
-    SEL sel = [invocation selector];
-    if ([self.target respondsToSelector:sel]) {
-        [invocation invokeWithTarget:self.target];
-    }else{
-        void *null = NULL;
-        [invocation setReturnValue:&null];
-    }
+    void *null = NULL;
+    [invocation setReturnValue:&null];
 }
 
 /**
@@ -63,7 +58,7 @@
  */
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
 {
-    return [self.target methodSignatureForSelector:aSelector];
+    return [NSObject instanceMethodSignatureForSelector:@selector(init)];
 }
 
 
